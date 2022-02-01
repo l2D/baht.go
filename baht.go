@@ -1,7 +1,6 @@
 package bahtgo
 
 import (
-	"fmt"
 	"math"
 	"regexp"
 	"strconv"
@@ -58,7 +57,7 @@ func convert(s interface{}) string {
 	// Check type of s
 	switch s := s.(type) {
 	case float64: // handle cases for float64
-		fmt.Println("s: ", s)
+		// fmt.Println("s: ", s)
 		isNegative = s < 0
 
 		if isNegative {
@@ -84,7 +83,7 @@ func convert(s interface{}) string {
 	case int: // handle cases for int
 		if s < 0 {
 			isNegative = true
-			fmt.Println("s: ", s)
+			// fmt.Println("s: ", s)
 		}
 
 		baht = s
@@ -102,7 +101,7 @@ func convert(s interface{}) string {
 		leadingZeroPattern := regexp.MustCompile(`^0+`)
 		negativeLeadingZeroPattern := regexp.MustCompile(`^-0+`)
 
-		fmt.Println("s: ", s)
+		// fmt.Println("s: ", s)
 		if strings.HasPrefix(s, "-") {
 			isNegative = true
 			// s = negativeLeadingZeroPattern.ReplaceAllString(s, "0")
@@ -121,7 +120,7 @@ func convert(s interface{}) string {
 			}
 		}
 
-		fmt.Println("s: ", s)
+		// fmt.Println("s: ", s)
 
 		// Find decimal point from string
 		decimalPoint := 0
